@@ -1,0 +1,21 @@
+---
+model: CA2.5D-UMamba
+shared_configuration_file: experiment_config.yaml
+trainer: nnUNetTrainerUMambaBot_2d25D_3M_Wavelet
+slices: 3
+input_channels: 9
+channel_order: modality_then_previous_center_next
+center_channels:
+- 1
+- 4
+- 7
+context_encoder_hidden_channels: 16
+context_fusion_stage: 0
+wavelet: single_level_Haar
+fusion: FACW_plus_semantic_gated_residual
+gamma_initial: 0
+mamba:
+  d_model: 512
+  d_state: 16
+  d_conv: 4
+  expand: 2

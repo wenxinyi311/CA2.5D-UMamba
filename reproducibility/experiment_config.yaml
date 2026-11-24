@@ -1,0 +1,105 @@
+---
+document_type: Shared experimental configuration
+environment_file: environment.yml
+dataset:
+  name: Dataset001_PituitaryTumor
+  modalities:
+  - T1
+  - T1C
+  - T2
+  patients: 97
+  folds: 5
+  validation_fold_sizes:
+  - 20
+  - 20
+  - 19
+  - 19
+  - 19
+  split_file: configs/splits_final.json
+preprocessing:
+  plans: configs/nnUNetPlans.json
+  configuration: 2d
+  transpose_forward:
+  - 0
+  - 1
+  - 2
+  crop: hole_filled_union_of_modality_nonzero_regions
+  normalization: per_case_per_modality_volume_Zscore
+  use_mask_for_norm:
+  - false
+  - false
+  - false
+  inplane_spacing_mm:
+  - 0.46880000829696655
+  - 0.46880000829696655
+  retain_original_slice_spacing: true
+  image_order: 3
+  label_order: 1
+  label_order_z: 0
+  label_threshold: 0.5
+training:
+  batch_size: 12
+  patch_size:
+  - 512
+  - 512
+  optimizer:
+    name: SGD
+    initial_lr: 0.01
+    momentum: 0.99
+    nesterov: true
+    weight_decay: 3.0e-05
+  scheduler:
+    name: PolyLR
+    total_epochs: 1000
+    power: 0.9
+  train_iterations_per_epoch: 250
+  online_validation_iterations_per_epoch: 50
+  loss: DC_and_CE_loss_with_deep_supervision
+  deep_supervision_weights:
+  - 0.5079365079365079
+  - 0.25396825396825395
+  - 0.12698412698412698
+  - 0.06349206349206349
+  - 0.031746031746031744
+  - 0.015873015873015872
+  - 0
+  foreground_oversample_percent: 0.33
+  gradient_clip_norm: 12
+  amp: true
+  mamba_internal_precision: float32
+  best_checkpoint_rule: maximum_online_foreground_patch_Dice_EMA
+  ema_history_weight: 0.9
+  num_epochs: 1000
+  epochs_by_fold:
+    '0': 1000
+    '1': 1000
+    '2': 1000
+    '3': 1000
+    '4': 1000
+  seed: 12345
+inference:
+  window_size:
+  - 512
+  - 512
+  step_size: 0.5
+  gaussian_weighting: true
+  mirror_axes:
+  - 0
+  - 1
+  flip_variants: 4
+  fold_ensemble: false
+  postprocessing: none
+evaluation:
+  metrics:
+  - Dice
+  - IoU
+  - HD95
+  - ASSD
+  - Precision
+  - Recall
+  distance_unit: mm
+  aggregation: patient_level
+  sample_standard_deviation_ddof: 1
+training_settings_file: training_settings.yaml
+scope: Proposed method and ablation experiments
+model_configuration_file: model_config.yaml

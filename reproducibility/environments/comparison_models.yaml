@@ -1,0 +1,67 @@
+---
+document_type: Comparison baseline environments
+environments:
+  TransUNet:
+    torch: 2.7.1+cu128
+    torchvision: 0.22.1+cu128
+    nnunetv2: 2.8.1
+    numpy: 2.2.6
+    scipy: 1.15.3
+    SimpleITK: 2.5.2
+    blosc2: 3.7.2
+    ml-collections: 1.1.0
+    acvl-utils: 0.2.6
+    batchgenerators: 0.25.3
+    batchgeneratorsv2: 0.3.6
+    dynamic-network-architectures: 0.4.4
+    cuda: '12.8'
+  nnUNet2D:
+    torch: 2.7.1+cu128
+    nnunetv2: 2.8.1
+    blosc2: 4.3.3
+    dynamic-network-architectures: 0.4.4
+    batchgeneratorsv2: 0.3.5
+    batchgenerators: 0.25.3
+    numpy: 2.2.6
+    scipy: 1.15.3
+    SimpleITK: 2.5.5
+  nnUNet3D:
+    torch: 2.7.1+cu128
+    nnunetv2: 2.8.1
+    blosc2: 4.3.3
+    dynamic-network-architectures: 0.4.4
+    batchgeneratorsv2: 0.3.5
+    batchgenerators: 0.25.3
+    numpy: 2.2.6
+    scipy: 1.15.3
+    SimpleITK: 2.5.5
+  SwinUMambaD:
+    python: '3.10'
+    torch: 2.7.1+cu128
+    nnunetv2: 2.8.1
+    blosc2: 4.3.3
+    dynamic-network-architectures: 0.4.4
+    batchgeneratorsv2: 0.3.5
+    batchgenerators: 0.25.3
+    numpy: 2.2.6
+    scipy: 1.15.3
+    SimpleITK: 2.5.5
+    mamba-ssm: 2.2.6.post3
+    causal-conv1d: 1.6.2.post1
+    timm: 1.0.22
+    einops: 0.8.2
+    triton: 3.3.1
+    transformers: 4.44.2
+    tokenizers: 0.19.1
+    huggingface-hub: 0.36.2
+  CSANet:
+    torch: 2.7.1+cu128
+    nnunetv2: 2.8.1
+    blosc2: 4.3.3
+    dynamic-network-architectures: 0.4.4
+    batchgeneratorsv2: 0.3.5
+    batchgenerators: 0.25.3
+    numpy: 2.2.6
+    scipy: 1.15.3
+    SimpleITK: 2.5.5
+    ml-collections: 1.1.0

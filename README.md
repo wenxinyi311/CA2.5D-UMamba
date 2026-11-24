@@ -9,8 +9,18 @@ Anonymous repository for the manuscript:
 This work is currently under peer review. Author-identifying information
 is omitted during double-anonymous peer review.
 
-This repository currently provides information about the planned code
-release. The implementation is not yet publicly available.
+This repository provides experiment configurations, software environment
+versions, native nnU-Net plans, and anonymous patient-level five-fold splits.
+The complete implementation is scheduled for release upon publication.
+
+## Experiment Configurations
+
+See [the configuration documentation](reproducibility/README.md) for:
+
+- Shared training settings: 1000 epochs per fold and random seed 12345
+- Model architecture, preprocessing, inference, and evaluation settings
+- The `umamba5090` software environment and comparison baseline environments
+- Native nnU-Net plans, dataset metadata, and patient-level fold assignments
 
 ## Planned Code Release
 
@@ -21,7 +31,6 @@ publication of the paper, including:
 - MRI preprocessing scripts
 - Training and inference scripts
 - Evaluation scripts
-- Experiment configurations and environment requirements
 - Instructions for reproducing the experiments
 
 ## Data Availability

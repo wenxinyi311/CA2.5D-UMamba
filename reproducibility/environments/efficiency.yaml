@@ -1,0 +1,8 @@
+---
+gpu: RTX5090
+torch: 2.7.1+cu128
+cuda: '12.8'
+precision: FP16 autocast with internal FP32 operations
+python: 3.10.20
+environment_file: "../environment.yml"
+runtime_environment_file: training.yaml

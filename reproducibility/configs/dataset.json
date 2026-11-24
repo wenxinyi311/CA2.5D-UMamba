@@ -1,0 +1,16 @@
+{
+  "channel_names": {
+    "0": "T1",
+    "1": "T1C",
+    "2": "T2"
+  },
+  "labels": {
+    "background": 0,
+    "pituitary_tumor": 1
+  },
+  "numTraining": 97,
+  "file_ending": ".nii.gz",
+  "name": "Dataset001_PituitaryTumor",
+  "release": "1.0",
+  "description": "Pituitary tumor segmentation with T1, T1C, and T2 modalities."
+}

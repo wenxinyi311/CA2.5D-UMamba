@@ -1,0 +1,44 @@
+---
+document_type: Shared software environment
+scope: Proposed method and ablation experiments
+versions:
+  python: 3.10.20
+  cuda: '12.8'
+  torch: 2.7.1+cu128
+  torchvision: 0.22.1+cu128
+  torchaudio: 2.7.1+cu128
+  nnunetv2: 2.1.1
+  mamba-ssm: 2.3.2.post1
+  causal-conv1d: 1.6.2.post1
+  dynamic-network-architectures: 0.4.4
+  triton: 3.3.1
+  numpy: 2.2.6
+  scipy: 1.15.3
+  SimpleITK: 2.5.5
+  batchgenerators: 0.25.3
+  acvl-utils: 0.2.6
+  nibabel: 5.4.2
+  scikit-image: 0.25.2
+  scikit-learn: 1.7.2
+  pandas: 2.3.3
+  einops: 0.8.2
+hardware:
+  gpu: NVIDIA GeForce RTX 5090
+  compute_capability:
+  - 12
+  - 0
+  visible_gpu_memory_mib: 32607
+augmentation_workers: 8
+environment_file: "../environment.yml"
+training_settings_file: "../training_settings.yaml"
+conda_environment:
+  name: umamba5090
+  activation: conda activate umamba5090
+platform:
+  operating_system: Ubuntu 22.04.5 LTS
+  virtualization: WSL2
+  nvidia_driver: '621.14'
+  pytorch_cuda: '12.8'
+  cuda_toolkit: '12.8'
+  nvcc: 12.8.93
+  cudnn: 9.2.0
